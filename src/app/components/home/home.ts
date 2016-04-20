@@ -4,17 +4,17 @@ import { ThemeCard } from '../theme-card/theme-card';
 import { TechnologiesStore } from '../../services/technologies-store/technologies-store';
 
 @Component({
-  selector: 'home',
-  providers: [ TechnologiesStore ],
-  templateUrl: './app/components/home/home.html',
-  directives: []
+    selector: 'home',
+    providers: [TechnologiesStore],
+    templateUrl: './app/components/home/home.html',
+    directives: [ThemeCard]
 })
 export class Home {
 
-  private themeCards: any[];
+    private themeCards:any[];
 
-  constructor(technologiesStore: TechnologiesStore){
-    technologiesStore.fetch().then((themes) => this.themeCards = themes);
-  }
+    constructor(technologiesStore:TechnologiesStore) {
+        technologiesStore.fetch().then((themes) => this.themeCards = themes);
+    }
 
 }
